@@ -2,6 +2,9 @@ package curriculum_A;
 
 public class Qes1_13 {
     public static void main(String[] args) {
+    	
+    	// Qes1
+    	
         // バイト型
         byte byteVar;
 
@@ -30,7 +33,10 @@ public class Qes1_13 {
         boolean booleanVar;
         
         
-     // バイト型
+        
+        // Qes2
+        
+       // バイト型
         byteVar = 10;
 
         // 短整数型
@@ -57,11 +63,46 @@ public class Qes1_13 {
         // ブーリアン型
         booleanVar = true;
 
+        
+        
+        //Qes3
+        
+        // バイト型
+        byteVar = 10;
+
+        // 短整数型
+        shortVar = 100;
+
+        // 整数型
+        intVar = 1000;
+
+        // 長整数型
+        longVar = 10000L;
+
+        // 単精度浮動小数点数型
+        floatVar = 9.5f;
+
+        // 倍精度浮動小数点数型
+        doubleVar = 10.5;
+
+        // 文字型
+        charVar = 'a';
+
+        // 文字列型 (JavaではStringクラスを使用)
+        stringVar = "ハロー";
+
+        // ブーリアン型
+        booleanVar = true;
+        
+        
+        
+        //Qes4
+
         // 11110を出力
-        System.out.println(intVar + longVar + " " + (intVar + longVar));
+        System.out.println(intVar + longVar + byteVar + shortVar +  " " + (intVar + longVar + byteVar + shortVar));
 
         // 20を出力
-        System.out.println(shortVar + " " + shortVar);
+        System.out.println(byteVar + byteVar + " " + (byteVar + byteVar));
 
         // a ハロー true a ハロー trueを出力
         System.out.println(charVar + " " + stringVar + " " + booleanVar + " " + charVar + " " + stringVar + " " + booleanVar);
@@ -76,15 +117,19 @@ public class Qes1_13 {
         System.out.println(doubleVar / 100 + " " + (doubleVar / 100) + " 10.5割る100をする");
 
         // -90と"10引く100をする"を出力
-        System.out.println(intVar - longVar + " " + (intVar - longVar) + " 10引く100をする");
+        System.out.println(byteVar - shortVar + " " + (byteVar - shortVar) + " 10引く100をする");
         
         
+        
+        // Qes5
         
         String num = "20";
 		int num1 = 23;
 		System.out.println("ハローJAVA" + (Integer.parseInt(num) + num1));
 		
 		
+		
+		//Qes6
 		
 		String info = "山田太郎 18歳 170.5cm 62.2kg 寿司";
 
@@ -105,15 +150,20 @@ public class Qes1_13 {
         
         
         
-     // BMIを計算
+        //Qes7
+        
+        // BMIを計算
         double heightInMeters = height / 100.0; // 身長をメートルに変換
         double bmi = weight / (heightInMeters * heightInMeters);
         
+        // フォーマットに従ってコンソールに出力
         System.out.println("BMIは" + bmi + "です");
         
         
         
-     // 既存の情報を変数に代入
+        // Qes8
+        
+        // 既存の情報を変数に代入
         name = "鈴木一郎";
         age = 24;
         height = 168.5;
@@ -134,14 +184,38 @@ public class Qes1_13 {
         
         
         
-     // 年齢が25歳以上ならtrueが出力される
+        // Qes9
+        
+        // 年齢、身長、体重を和算で自己代入
+        age += age;
+        height += height;
+        weight += weight;
+
+        // BMIを再計算
+        heightInMeters = height / 100.0; // 身長をメートルに変換
+        bmi = weight / (heightInMeters * heightInMeters);
+
+        // フォーマットに従ってコンソールに出力
+        System.out.println("初めまして" + name + "です");
+        System.out.println("年齢は" + age + "歳です");
+        System.out.println("身長は" + height + "cmです");
+        System.out.println("体重は" + weight + "kgです");
+        System.out.println("BMIは" + String.format("%.2f", bmi) + "です");
+        
+        
+        
+        //Qes10
+        
+        // 年齢が25歳以上ならtrueが出力される
         boolean is25OrOlder = age >= 25;
         
         System.out.println(is25OrOlder);
         
         
         
-     // 年齢・身長・体重を文字列に型変換
+        // Qes11
+        
+        // 年齢・身長・体重を文字列に型変換
         String ageStr = Integer.toString(age);
         String heightStr = Double.toString(height);
         String weightStr = Double.toString(weight);
@@ -153,7 +227,9 @@ public class Qes1_13 {
         
         
         
-     // 年齢・身長を文字列から整数に変換
+        //Qes12
+        
+        // 年齢・身長を文字列から整数に変換
         int convertedAge = Integer.parseInt(Integer.toString(age));
         int convertedHeight = (int) Double.parseDouble(Double.toString(height)); // 身長は整数に変換（小数点以下切り捨て）
         
@@ -161,7 +237,9 @@ public class Qes1_13 {
         
         
         
-     // 年齢と身長の条件をチェック
+        //Qes13
+        
+        // 年齢と身長の条件をチェック
         boolean is25OrAbove = age >= 25;
         boolean isHeightAbove160 = height >= 160.0;
 
