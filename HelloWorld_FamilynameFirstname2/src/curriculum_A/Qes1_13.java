@@ -37,31 +37,31 @@ public class Qes1_13 {
         // Qes2
         
        // バイト型
-        byteVar = 10;
+        byteVar = 0;
 
         // 短整数型
-        shortVar = 100;
+        shortVar = 0;
 
         // 整数型
-        intVar = 1000;
+        intVar = 0;
 
         // 長整数型
-        longVar = 10000L;
+        longVar = 0L;
 
         // 単精度浮動小数点数型
-        floatVar = 9.5f;
+        floatVar = 0.0f;
 
         // 倍精度浮動小数点数型
-        doubleVar = 10.5;
+        doubleVar = 0.0d;
 
         // 文字型
-        charVar = 'a';
+        charVar = '\u0000';
 
         // 文字列型 (JavaではStringクラスを使用)
-        stringVar = "ハロー";
+        stringVar = "null";
 
         // ブーリアン型
-        booleanVar = true;
+        booleanVar = false;
 
         
         
@@ -102,7 +102,7 @@ public class Qes1_13 {
         System.out.println(intVar + longVar + byteVar + shortVar +  " " + (intVar + longVar + byteVar + shortVar));
 
         // 20を出力
-        System.out.println(byteVar + byteVar + " " + (byteVar + byteVar));
+        System.out.println(floatVar + doubleVar + " " + (floatVar + doubleVar));
 
         // a ハロー true a ハロー trueを出力
         System.out.println(charVar + " " + stringVar + " " + booleanVar + " " + charVar + " " + stringVar + " " + booleanVar);
@@ -157,7 +157,7 @@ public class Qes1_13 {
         double bmi = weight / (heightInMeters * heightInMeters);
         
         // フォーマットに従ってコンソールに出力
-        System.out.println("BMIは" + bmi + "です");
+        System.out.println("BMIは" + Math.floor(bmi) + "です");
         
         
         
@@ -206,6 +206,9 @@ public class Qes1_13 {
         
         //Qes10
         
+        // 年齢を再代入
+        age = 24;
+        
         // 年齢が25歳以上ならtrueが出力される
         boolean is25OrOlder = age >= 25;
         
@@ -214,6 +217,10 @@ public class Qes1_13 {
         
         
         // Qes11
+        
+        // 身長と体重を再代入
+        height = 168.5;
+        weight = 64.2;
         
         // 年齢・身長・体重を文字列に型変換
         String ageStr = Integer.toString(age);
