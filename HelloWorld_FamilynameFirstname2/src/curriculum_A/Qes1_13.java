@@ -58,7 +58,7 @@ public class Qes1_13 {
         charVar = '\u0000';
 
         // 文字列型 (JavaではStringクラスを使用)
-        stringVar = "null";
+        stringVar = null;
 
         // ブーリアン型
         booleanVar = false;
