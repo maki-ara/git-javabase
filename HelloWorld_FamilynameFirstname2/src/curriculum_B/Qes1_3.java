@@ -1,18 +1,26 @@
 package curriculum_B;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Qes1_3 {
 
     public static void main(String[] args) {
-    	// ユーザー名を入力
-        String userName = new java.util.Scanner(System.in).nextLine();
+        // ユーザー名を入力
+        Scanner scanner = new Scanner(System.in);
+        String userName = scanner.nextLine();
 
         if (userName == null || userName.isEmpty()) { // ユーザー名の文字数が0文字以下もしくはnullの場合
             System.out.println("名前を入力してください");
+            scanner.close();
+            return; // エラーが発生した場合はプログラムを終了
         } else if (userName.length() > 10) { // ユーザー名の文字数が10文字より大きい場合
             System.out.println("名前を10文字以内にしてください");
+            scanner.close();
+            return; // エラーが発生した場合はプログラムを終了
         } else if (!userName.matches("^[a-zA-Z0-9]+$")) { // ユーザー名が半角英数字以外の場合
             System.out.println("半角英数字のみで名前を入力してください");
+            scanner.close();
+            return; // エラーが発生した場合はプログラムを終了
         } else {
             System.out.println("ユーザー名「" + userName + "」を登録しました");
         }
@@ -60,5 +68,6 @@ public class Qes1_3 {
         }
 
         System.out.println("勝つまでにかかった合計回数は" + totalGames + "回です");
+        scanner.close();
     }
 }

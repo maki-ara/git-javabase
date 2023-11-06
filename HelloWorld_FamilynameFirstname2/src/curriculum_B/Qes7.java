@@ -12,7 +12,7 @@ public class Qes7 {
 
         if (numStudents < 2) {
             System.out.println("生徒の人数は2以上で入力してください。");
-            return;
+            System.exit(0);
         }
 
         // 科目の数
@@ -50,6 +50,8 @@ public class Qes7 {
         // 全体の平均点を表示
         double overallAverage = calculateOverallAverage(studentAverages);
         System.out.println("全体の平均点は" + String.format("%.2f", overallAverage) + "点です.");
+        scanner.close();
+        
     }
 
     // 平均点を計算するユーティリティメソッド
