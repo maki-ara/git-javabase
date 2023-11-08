@@ -22,7 +22,7 @@ public class Curriculum_New_1_18 {
     }
 
     // Q4：小数2つの引数を受け取り、引数同士を和算してコンソールに出力するメソッド（Q2をオーバーロード）
-    public static void addNumbers(double num1, double num2) {
+    public static void multiplyNumbers(double num1, double num2) {
         double result = num1 + num2;
         System.out.println("和算結果: " + result);
     }
@@ -55,15 +55,21 @@ public class Curriculum_New_1_18 {
     }
 
     // Q7：整数リストを受け取り、値が50以上ならtrue、それ以外はfalseを返し、コンソールに出力するメソッド
-    public static boolean checkIfAbove50(ArrayList<Integer> numberList) {
+    public static boolean isAverageOver50(ArrayList<Integer> numberList) {
+        int sum = 0;
         for (int num : numberList) {
-            if (num >= 50) {
-                System.out.println("true");
-                return true;
-            }
+            sum += num;
         }
-        System.out.println("false");
-        return false;
+
+        double average = (double) sum / numberList.size();
+        System.out.println("平均値: " + average);
+
+        // 平均値が50以上かどうかを判定
+        if (average >= 50) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public static void main(String[] args) {
@@ -78,7 +84,7 @@ public class Curriculum_New_1_18 {
         printIntArray(intArray);
         
         // Q4：小数の和算結果を出力
-        addNumbers(3.5, 2.1);
+        multiplyNumbers(3.5, 2.1);
         
         // Q5：ランダムな整数を生成し出力し、リストを受け取る
         ArrayList<Integer> randomNumbers = generateRandomNumbers(5);
@@ -87,6 +93,8 @@ public class Curriculum_New_1_18 {
         printAverage(randomNumbers);
         
         // Q7：50以上かどうかを出力
-        checkIfAbove50(randomNumbers);
+       // isAverageOver50 メソッドを呼び出して結果を受け取り、コンソールに出力
+        boolean result = isAverageOver50(randomNumbers);
+        System.out.println(result);
     }
 }
