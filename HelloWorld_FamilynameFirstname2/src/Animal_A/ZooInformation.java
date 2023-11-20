@@ -7,6 +7,15 @@ class Animala {
     private int speed;
     private String scientificName;
 
+    // 学名が入力されない場合のコンストラクタ
+    public Animala(String name, double length, int speed) {
+        this.name = name;
+        this.length = length;
+        this.speed = speed;
+        this.scientificName = "不明";
+    }
+
+    // 学名が入力される場合のコンストラクタ
     public Animala(String name, double length, int speed, String scientificName) {
         this.name = name;
         this.length = length;
@@ -24,6 +33,16 @@ class Animala {
 
 public class ZooInformation {
     public static void main(String[] args) {
+        // 学名を設定
+        String[] scientificNames = {
+            "パンテラ レオ",
+            "ロキソドンタ・サイクロティス",
+            "アイルロポダ・メラノレウカ",
+            "パン・トゥログロディテス",
+            "チャップマンシマウマ",
+            "不明"  // 学名が不明の場合
+        };
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("コンソールに文字を入力してください");
@@ -32,24 +51,28 @@ public class ZooInformation {
 
         String[] animalsData = input.split(",");
 
-        for (String animalData : animalsData) {
-            String[] animalInfo = animalData.split(":");
+        // 入力されたデータと学名を対応させる
+        for (int i = 0; i < animalsData.length; i++) {
+            String[] animalInfo = animalsData[i].split(":");
             
-            // animalInfo の長さが 4 でない場合は処理をスキップ
-            if (animalInfo.length != 4) {
-                System.out.println("無効なデータ形式です: " + animalData);
+            // animalInfo の長さが 3 以上 4 以下でない場合は処理をスキップ
+            if (animalInfo.length < 3 || animalInfo.length > 4) {
+                System.out.println("無効なデータ形式です: " + animalsData[i]);
                 continue;
             }
 
             String name = animalInfo[0];
             double length = Double.parseDouble(animalInfo[1]);
             int speed = Integer.parseInt(animalInfo[2]);
-            String scientificName = animalInfo[3];
+
+            // 学名を取得
+            String scientificName = (i < scientificNames.length) ? scientificNames[i] : "不明";
 
             Animala animal = new Animala(name, length, speed, scientificName);
             animal.displayInfo();
         }
-     // Scanner を閉じる
+
+        // Scanner を閉じる
         scanner.close();
     }
 }
