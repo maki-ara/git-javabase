@@ -47,5 +47,8 @@ public class SortingPrefectures {
             }
             prefecture.displayInfo();
         }
+
+        // Scanner を閉じる
+        scanner.close();
     }
 }
