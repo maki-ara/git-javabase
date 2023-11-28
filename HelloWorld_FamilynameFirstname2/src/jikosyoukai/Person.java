@@ -16,14 +16,16 @@ class Person {
      count++;
  }
 
- double bmi() {
-     return weight / (height * height);
+ int calculateRoundedBMI() {
+     // BMIを計算し、小数点以下を切り捨て
+     return (int) Math.floor(weight / (height * height));
  }
 
  void print() {
+     int roundedBMI = calculateRoundedBMI();
      System.out.println("名前は" + this.name + "です");
      System.out.println("年は" + this.age + "歳です");
-     System.out.println("BMIは" + String.format("%.1f", 20.0) + "です");
+     System.out.println("BMIは" + roundedBMI + ".0 です");  // 20.0のように表示
  }
 
  static int getCount() {
