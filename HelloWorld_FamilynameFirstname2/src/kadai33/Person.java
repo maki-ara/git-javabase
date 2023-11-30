@@ -37,19 +37,19 @@ class Person {
      System.out.println("合計" + Person.count + "人です");
  }
 
-public void buy(Car car) {
-  // Carオブジェクトの所有者を設定
-  car.setOwner(this.fullName());
+ public void buy(Car car) {
+     // Carオブジェクトの所有者を設定
+     car.setOwner(this.fullName());
 
-  // 購入者の名前と購入した車の情報を表示
-  System.out.println(car.getOwner() + "が購入しました");
-}
+     // 購入者と購入した車の情報を表示
+     System.out.println(this.fullName() + "が購入しました");
+ }
 
-public void buy(Bicycle bicycle) {
-  // Bicycleオブジェクトの所有者を設定
-  bicycle.setOwner(this.fullName());
+ public void buy(Bicycle bicycle) {
+     // Bicycleオブジェクトの所有者を設定
+     bicycle.setOwner(this.fullName());
 
-  // 購入者の名前と購入した自転車の情報を表示
-  System.out.println(bicycle.getOwner() + "が購入しました");
-}
+     // 購入者と購入した自転車の情報を表示
+     System.out.println(this.fullName() + "が購入しました");
+ }
 }
